@@ -26,18 +26,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-bold text-2xl gradient-text">
+          <Link href="/" className="flex items-center gap-2 font-bold text-xl md:text-2xl gradient-text flex-shrink-0">
             <span className="text-primary">❤️</span>
-            JCC
+            <span className="hidden sm:inline">JCC</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex gap-8">
+          <div className="hidden lg:flex gap-6 xl:gap-8 items-center flex-1 justify-center mx-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-primary transition-colors font-medium"
+                className="text-gray-700 hover:text-primary transition-colors font-medium text-sm lg:text-base whitespace-nowrap"
               >
                 {link.label}
               </Link>
@@ -45,15 +45,15 @@ export default function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link href="/contact" className="btn-primary">
+          <div className="hidden lg:block flex-shrink-0">
+            <Link href="/contact" className="btn-primary text-sm lg:text-base">
               Book Appointment
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="lg:hidden p-2 ml-auto"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -63,19 +63,19 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4 border-t">
-            <div className="flex flex-col gap-4 pt-4">
+          <div className="lg:hidden pb-4 border-t">
+            <div className="flex flex-col gap-3 pt-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-gray-700 hover:text-primary transition-colors font-medium"
+                  className="text-gray-700 hover:text-primary transition-colors font-medium px-4 py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Link href="/contact" className="btn-primary block text-center">
+              <Link href="/contact" className="btn-primary block text-center mx-4 mt-2">
                 Book Appointment
               </Link>
             </div>

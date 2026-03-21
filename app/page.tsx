@@ -9,14 +9,14 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-secondary text-white py-16 md:py-24">
+      <section className="bg-gradient-to-r from-primary to-secondary text-white py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight">
                 Expert Heart Care in Jaipur
               </h1>
-              <p className="text-lg md:text-xl text-gray-100 mb-8">
+              <p className="text-base md:text-lg lg:text-xl text-gray-100 mb-6 md:mb-8">
                 Welcome to Jaipur Cardiac Centre - Your trusted destination for advanced and reliable heart care. Dr. Raghvendra Choudhary, with 25+ years of expertise, provides comprehensive cardiac solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -28,27 +28,27 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="bg-white/10 rounded-lg p-8 backdrop-blur-sm">
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <Heart className="text-primary flex-shrink-0 mt-1" size={28} />
-                  <div>
-                    <h3 className="font-bold text-lg">25+ Years Experience</h3>
-                    <p className="text-gray-200">Treating thousands of cardiac patients successfully</p>
+            <div className="bg-white/10 rounded-lg p-6 md:p-8 backdrop-blur-sm">
+              <div className="space-y-4 md:space-y-6">
+                <div className="flex items-start gap-3 md:gap-4">
+                  <Heart className="text-primary flex-shrink-0 mt-1" size={24} />
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-base md:text-lg">25+ Years Experience</h3>
+                    <p className="text-gray-200 text-sm md:text-base break-words">Treating thousands of cardiac patients successfully</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <CheckCircle className="text-primary flex-shrink-0 mt-1" size={28} />
-                  <div>
-                    <h3 className="font-bold text-lg">15,000+ Procedures</h3>
-                    <p className="text-gray-200">Advanced angioplasty and cardiac interventions</p>
+                <div className="flex items-start gap-3 md:gap-4">
+                  <CheckCircle className="text-primary flex-shrink-0 mt-1" size={24} />
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-base md:text-lg">15,000+ Procedures</h3>
+                    <p className="text-gray-200 text-sm md:text-base break-words">Advanced angioplasty and cardiac interventions</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <Award className="text-primary flex-shrink-0 mt-1" size={28} />
-                  <div>
-                    <h3 className="font-bold text-lg">Expert Training</h3>
-                    <p className="text-gray-200">DM Cardiology from SMS Medical College</p>
+                <div className="flex items-start gap-3 md:gap-4">
+                  <Award className="text-primary flex-shrink-0 mt-1" size={24} />
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-base md:text-lg">Expert Training</h3>
+                    <p className="text-gray-200 text-sm md:text-base break-words">DM Cardiology from SMS Medical College</p>
                   </div>
                 </div>
               </div>

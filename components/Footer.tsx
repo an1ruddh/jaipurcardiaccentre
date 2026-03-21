@@ -10,16 +10,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* About */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Jaipur Cardiac Centre</h3>
-            <p className="text-gray-300 text-sm">
+            <h3 className="text-lg font-bold mb-4 text-white">Jaipur Cardiac Centre</h3>
+            <p className="text-white text-sm opacity-90">
               Leading destination for advanced and reliable heart care in Jaipur. Trusted by thousands of patients.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-gray-300 text-sm">
+            <h3 className="text-lg font-bold mb-4 text-white">Quick Links</h3>
+            <ul className="space-y-2 text-white text-sm opacity-90">
               <li>
                 <Link href="/services" className="hover:text-primary transition-colors">
                   Services
@@ -45,8 +45,8 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Services</h3>
-            <ul className="space-y-2 text-gray-300 text-sm">
+            <h3 className="text-lg font-bold mb-4 text-white">Services</h3>
+            <ul className="space-y-2 text-white text-sm opacity-90">
               <li>Cardiac Consultation</li>
               <li>ECG & Echocardiography</li>
               <li>Angiography & Angioplasty</li>
@@ -56,8 +56,8 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Contact Info</h3>
-            <div className="space-y-3 text-gray-300 text-sm">
+            <h3 className="text-lg font-bold mb-4 text-white">Contact Info</h3>
+            <div className="space-y-3 text-white text-sm opacity-90">
               <div className="flex items-center gap-2">
                 <Phone size={16} className="text-primary" />
                 <a href="tel:+918107667788" className="hover:text-primary transition-colors">

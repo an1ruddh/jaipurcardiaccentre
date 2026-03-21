@@ -91,6 +91,14 @@ body {
   color: var(--color-secondary);
 }
 
+.text-gray-300 {
+  color: #d1d5dc;
+}
+
+.text-gray-400 {
+  color: #99a1af;
+}
+
 .border-primary {
   border-color: var(--color-primary);
 }
