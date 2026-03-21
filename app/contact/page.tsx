@@ -28,9 +28,8 @@ export default function Contact() {
 
     try {
       // Using Formspree for email forwarding
-      // NOTE: Replace 'your_form_id' with your actual Formspree form ID
-      // Get it at: https://formspree.io/ (create account, create form, get ID)
-      const response = await fetch('https://formspree.io/f/xjkvzyqy', {
+      // Formspree ID: xkoqawjb (setup for drraghven10@gmail.com)
+      const response = await fetch('https://formspree.io/f/xkoqawjb', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
