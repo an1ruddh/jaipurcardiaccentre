@@ -1,12 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Send, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { motion } from 'framer-motion'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -64,12 +67,24 @@ export default function Contact() {
   }
 
   return (
-    <main>
+    <main className="overflow-x-hidden">
       {/* Header */}
-      <section className="bg-gradient-to-r from-primary to-secondary text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold">Contact Us</h1>
-          <p className="text-lg text-gray-100 mt-4">Get in touch with us to schedule your appointment</p>
+      <section className="relative py-24 bg-gradient-hero text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Badge variant="secondary" className="mb-6 text-lg px-4 py-2 bg-white/20 text-white border-white/30">
+              Get in Touch
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>
+            <p className="text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto">
+              Get in touch with us to schedule your appointment
+            </p>
+          </motion.div>
         </div>
       </section>
 
