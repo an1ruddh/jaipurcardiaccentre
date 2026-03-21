@@ -1,0 +1,291 @@
+================================================================================
+                    CONTACT FORM LAYOUT & FIELDS
+================================================================================
+
+WEBPAGE: https://yourdomain.com/contact
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│                        Book an Appointment                             │
+│                                                                         │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  📝 Full Name *                                                         │
+│  ┌────────────────────────────────────────────────────────────────┐  │
+│  │ [Your full name                          ]                     │  │
+│  └────────────────────────────────────────────────────────────────┘  │
+│                                                                         │
+│  📧 Email Address *                                                    │
+│  ┌────────────────────────────────────────────────────────────────┐  │
+│  │ [your.email@example.com                  ]                     │  │
+│  └────────────────────────────────────────────────────────────────┘  │
+│                                                                         │
+│  📱 Phone Number *                                                     │
+│  ┌────────────────────────────────────────────────────────────────┐  │
+│  │ [+91 XXXXX XXXXX                         ]                     │  │
+│  └────────────────────────────────────────────────────────────────┘  │
+│                                                                         │
+│  🏥 Service Required *                                                 │
+│  ┌────────────────────────────────────────────────────────────────┐  │
+│  │ ▼ Select a service                                             │  │
+│  │   - Cardiac Consultation                                       │  │
+│  │   - ECG (Electrocardiogram)                                    │  │
+│  │   - 2D Echo (Echocardiography)                                 │  │
+│  │   - Angiography                                                │  │
+│  │   - Angioplasty                                                │  │
+│  │   - Pacemaker Implantation                                     │  │
+│  │   - General Checkup                                            │  │
+│  │   - Other                                                      │  │
+│  └────────────────────────────────────────────────────────────────┘  │
+│                                                                         │
+│  💬 Message/Additional Info                                            │
+│  ┌────────────────────────────────────────────────────────────────┐  │
+│  │ [Tell us about your health concerns...                    ]    │  │
+│  │ [                                                          ]    │  │
+│  │ [                                                          ]    │  │
+│  │ [                                                          ]    │  │
+│  │ [                                                          ]    │  │
+│  └────────────────────────────────────────────────────────────────┘  │
+│                                                                         │
+│  ┌────────────────────────────────────────────────────────────────┐  │
+│  │        [    Book Appointment    ]                              │  │
+│  └────────────────────────────────────────────────────────────────┘  │
+│                                                                         │
+│  * Required fields. We'll contact you within 24 hours.                │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+                              FIELD DETAILS
+================================================================================
+
+1. FULL NAME
+   Type: Text Input
+   Required: YES (*)
+   Max Length: Unlimited
+   Example: Rajesh Kumar Singh
+   
+   What happens: Used to address the patient by name when clinic calls
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2. EMAIL ADDRESS
+   Type: Email Input
+   Required: YES (*)
+   Format: email@domain.com
+   Example: patient@gmail.com
+   
+   What happens: Email confirmation sent here, appointment details shared
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3. PHONE NUMBER
+   Type: Phone Input
+   Required: YES (*)
+   Format: +91 XXXXX XXXXX
+   Example: +91 9876543210
+   
+   What happens: Clinic calls this number to confirm appointment
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+4. SERVICE REQUIRED
+   Type: Dropdown Select
+   Required: YES (*)
+   Options: 8 services available
+   
+   Available Services:
+   ├─ Cardiac Consultation
+   ├─ ECG (Electrocardiogram)
+   ├─ 2D Echo (Echocardiography)
+   ├─ Angiography
+   ├─ Angioplasty
+   ├─ Pacemaker Implantation
+   ├─ General Checkup
+   └─ Other
+   
+   What happens: Clinic knows which service to book and prepare for
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5. MESSAGE/ADDITIONAL INFO
+   Type: Text Area
+   Required: NO (Optional)
+   Lines: 5 visible lines (can type more)
+   Example: "I have chest pain for 2 weeks, especially after exercise"
+   
+   What happens: Helps doctor understand condition better for appointment priority
+
+================================================================================
+                            FORM VALIDATION
+================================================================================
+
+When patient clicks "Book Appointment" button:
+
+✅ CHECK 1: Full Name
+   - Must not be empty
+   - Error message: "Name field is required"
+
+✅ CHECK 2: Email Address
+   - Must not be empty
+   - Must be valid email format (xxx@xxx.xxx)
+   - Error message: "Valid email required"
+
+✅ CHECK 3: Phone Number
+   - Must not be empty
+   - Error message: "Phone number required"
+
+✅ CHECK 4: Service Required
+   - Must have selection (not "Select a service")
+   - Error message: "Please select a service"
+
+✅ CHECK 5: Message
+   - No validation (optional field)
+
+If all checks pass → Form submitted ✅
+If any check fails → Form shows error message ❌
+
+================================================================================
+                          SUCCESS FLOW
+================================================================================
+
+1. Patient fills all required fields
+           ↓
+2. Patient clicks "Book Appointment" button
+           ↓
+3. Form validates (checks all fields)
+           ↓
+4. Button shows "Sending..." (disabled, grayed out)
+           ↓
+5. Form data sent to Formspree
+           ↓
+6. Formspree forwards to: drraghven10@gmail.com
+           ↓
+7. Success message appears:
+   "Thank you! Your appointment request has been sent. 
+    We'll contact you soon."
+   
+   (Green box for 3 seconds, then hides)
+           ↓
+8. Form fields clear for next submission
+           ↓
+9. Email inbox receives:
+   From: Patient's Email
+   To: drraghven10@gmail.com
+   Subject: New Appointment Request from [Patient Name]
+   Body: All form data (name, email, phone, service, message)
+
+================================================================================
+                          ERROR FLOW
+================================================================================
+
+1. Patient submits incomplete/invalid form
+           ↓
+2. JavaScript validation fails
+           ↓
+3. Form shows error message or field highlights
+           ↓
+4. Patient corrects the error
+           ↓
+5. Patient tries again
+
+OR
+
+1. Network error occurs during submission
+           ↓
+2. Red error message appears:
+   "Error sending form. Please try again or call us directly."
+           ↓
+3. Patient can retry or call clinic directly
+   Phone: +91 8107667788
+
+================================================================================
+                        EMAIL RECEIVED BY CLINIC
+================================================================================
+
+From: patient@gmail.com
+To: drraghven10@gmail.com
+Subject: New Appointment Request from Rajesh Kumar
+
+Message Body:
+───────────────────────────────────────────────────────────────
+
+Full Name: Rajesh Kumar
+Email: rajesh@gmail.com
+Phone: +91 9876543210
+Service Required: Cardiac Consultation
+Message: I'm experiencing chest pain and want to get a checkup
+
+───────────────────────────────────────────────────────────────
+
+Clinic team reads this and:
+✓ Calls patient at +91 9876543210
+✓ Confirms appointment date/time
+✓ Sends confirmation email to rajesh@gmail.com
+
+================================================================================
+                        RESPONSIVE DESIGN
+================================================================================
+
+On Desktop (1024px+):
+├─ Left side: Contact Info (4 boxes)
+└─ Right side: Form
+
+On Tablet (768px - 1023px):
+├─ Contact Info (2 columns)
+└─ Form below
+
+On Mobile (< 768px):
+├─ Contact Info (single column, stacked)
+├─ Form below (full width)
+└─ All fields full width for easy typing
+
+================================================================================
+                      CUSTOMIZABLE OPTIONS
+================================================================================
+
+You CAN change (by editing app/contact/page.tsx):
+
+1. ✏️ Service list dropdown options
+   - Add more services
+   - Remove services
+   - Change service names
+
+2. ✏️ Placeholder text
+   - "Your full name" → "Enter your name"
+   - "Tell us about your health concerns..." → Custom text
+
+3. ✏️ Field requirements
+   - Make message required (add required attribute)
+   - Add more fields
+
+4. ✏️ Email recipient
+   - Change from drraghven10@gmail.com
+   - Add CC fields
+   - Add BCC fields
+
+5. ✏️ Success/Error messages
+   - Customize success message
+   - Customize error message
+
+6. ✏️ Button text
+   - "Book Appointment" → "Submit Request"
+   - "Sending..." → "Please wait..."
+
+================================================================================
+                          CURRENT STATUS
+================================================================================
+
+Form Status: ✅ READY TO USE
+
+What's needed to go live:
+1. ☐ Update Formspree form ID (in line 31)
+2. ☐ Test with a sample submission
+3. ☐ Verify email reaches drraghven10@gmail.com
+4. ☐ Deploy to Vercel
+5. ☐ Share contact page URL with patients
+
+Everything else is already configured!
+
+================================================================================
