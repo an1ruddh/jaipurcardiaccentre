@@ -14,6 +14,8 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -22,6 +24,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .gradient-text {
@@ -105,4 +109,12 @@ body {
 
 .border-secondary {
   border-color: var(--color-secondary);
+}
+
+main {
+  width: 100%;
+}
+
+section {
+  width: 100%;
 }
