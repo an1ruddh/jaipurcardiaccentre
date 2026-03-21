@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+:root {
+  --color-primary: #e31c23;
+  --color-secondary: #1a365d;
+  --color-light: #f8f9fa;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -19,19 +25,21 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #e31c23, #1a365d);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .btn-primary {
+  display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: #e31c23;
+  background-color: var(--color-primary);
   color: white;
   border-radius: 0.5rem;
   font-weight: 500;
   transition: background-color 0.3s;
+  text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -39,12 +47,14 @@ body {
 }
 
 .btn-secondary {
+  display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: #1a365d;
+  background-color: var(--color-secondary);
   color: white;
   border-radius: 0.5rem;
   font-weight: 500;
   transition: background-color 0.3s;
+  text-decoration: none;
 }
 
 .btn-secondary:hover {
@@ -58,4 +68,33 @@ body {
 .card-hover:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom color utilities */
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-light {
+  background-color: var(--color-light);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.border-secondary {
+  border-color: var(--color-secondary);
 }
