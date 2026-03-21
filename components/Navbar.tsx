@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -46,9 +47,9 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:block flex-shrink-0">
-            <Link href="/contact" className="btn-primary text-sm lg:text-base">
-              Book Appointment
-            </Link>
+            <Button asChild size="sm" className="text-sm lg:text-base">
+              <Link href="/contact">Book Appointment</Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -75,9 +76,9 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link href="/contact" className="btn-primary block text-center mx-4 mt-2">
-                Book Appointment
-              </Link>
+              <Button asChild className="mx-4 mt-2" size="sm">
+                <Link href="/contact">Book Appointment</Link>
+              </Button>
             </div>
           </div>
         )}

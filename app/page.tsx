@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { services } from '@/data/services'
 import { testimonials } from '@/data/testimonials'
 import { Heart, CheckCircle, Users, Award } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 export default function Home() {
   const topServices = services.slice(0, 6)
@@ -19,14 +20,14 @@ export default function Home() {
               <p className="text-base md:text-lg lg:text-xl text-gray-100 mb-6 md:mb-8">
                 Welcome to Jaipur Cardiac Centre - Your trusted destination for advanced and reliable heart care. Dr. Raghvendra Choudhary, with 25+ years of expertise, provides comprehensive cardiac solutions.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact" className="btn-primary">
-                  Book Appointment
-                </Link>
-                <Link href="/doctor" className="btn-secondary">
-                  Meet Dr. Raghvendra
-                </Link>
-              </div>
+               <div className="flex flex-col sm:flex-row gap-4">
+                 <Button asChild size="lg">
+                   <Link href="/contact">Book Appointment</Link>
+                 </Button>
+                 <Button asChild variant="outline" size="lg">
+                   <Link href="/doctor">Meet Dr. Raghvendra</Link>
+                 </Button>
+               </div>
             </div>
             <div className="bg-white/10 rounded-lg p-6 md:p-8 backdrop-blur-sm">
               <div className="space-y-4 md:space-y-6">
@@ -116,9 +117,9 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center">
-            <Link href="/services" className="btn-primary">
-              View All Services
-            </Link>
+            <Button asChild size="lg">
+              <Link href="/services">View All Services</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -153,9 +154,9 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center">
-            <Link href="/testimonials" className="btn-primary">
-              Read More Testimonials
-            </Link>
+            <Button asChild size="lg">
+              <Link href="/testimonials">Read More Testimonials</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -188,9 +189,9 @@ export default function Home() {
           <p className="text-gray-700 text-lg mb-8 max-w-2xl mx-auto">
             Don't delay your cardiac check-up. Book an appointment with Dr. Raghvendra today and take the first step towards a healthier heart.
           </p>
-          <Link href="/contact" className="btn-primary">
-            Schedule Your Appointment Today
-          </Link>
+          <Button asChild size="lg">
+            <Link href="/contact">Schedule Your Appointment Today</Link>
+          </Button>
         </div>
       </section>
     </main>

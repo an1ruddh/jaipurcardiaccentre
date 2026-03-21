@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { blog } from '@/data/blog'
 import { Calendar, User, Tag, ArrowLeft } from 'lucide-react'
 import { notFound } from 'next/navigation'
+import { Button } from '@/components/ui/button'
 
 export const generateStaticParams = async () => {
   return blog.map((post) => ({
@@ -118,9 +119,9 @@ export default function BlogArticle({ params }: { params: { slug: string } }) {
             <p className="text-gray-700 mb-4">
               Consult with Dr. Raghvendra for personalized cardiac care and treatment.
             </p>
-            <Link href="/contact" className="btn-primary">
-              Schedule a Consultation
-            </Link>
+            <Button asChild>
+              <Link href="/contact">Schedule a Consultation</Link>
+            </Button>
           </div>
 
           {/* Related Posts */}

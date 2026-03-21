@@ -1,5 +1,6 @@
 import { doctorProfile } from '@/data/doctorProfile'
 import { Award, GraduationCap, Briefcase } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 export const metadata = {
   title: 'Dr. Raghvendra Choudhary - Jaipur Cardiac Centre',
@@ -118,7 +119,9 @@ export default function Doctor() {
                   </div>
                 </div>
 
-                <button className="w-full btn-primary mt-6">Book Appointment</button>
+                <Button asChild className="w-full mt-6" size="lg">
+                  <a href="/contact">Book Appointment</a>
+                </Button>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { services } from '@/data/services'
+import { Button } from '@/components/ui/button'
 
 export const metadata = {
   title: 'Services - Jaipur Cardiac Centre',
@@ -109,9 +110,9 @@ export default function Services() {
           <p className="text-gray-700 text-lg mb-8">
             Contact us today to schedule your appointment or discuss your cardiac care needs with Dr. Raghvendra.
           </p>
-          <a href="/contact" className="btn-primary">
-            Get in Touch
-          </a>
+          <Button asChild size="lg">
+            <a href="/contact">Get in Touch</a>
+          </Button>
         </div>
       </section>
     </main>

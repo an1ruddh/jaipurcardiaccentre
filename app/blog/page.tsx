@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { blog } from '@/data/blog'
 import { Calendar, User, Tag } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 export const metadata = {
   title: 'Blog - Jaipur Cardiac Centre',
@@ -94,9 +95,9 @@ export default function BlogPage() {
           <p className="text-gray-700 text-lg mb-8">
             Consult with Dr. Raghvendra for personalized advice and treatment plans.
           </p>
-          <a href="/contact" className="btn-primary">
-            Schedule a Consultation
-          </a>
+          <Button asChild size="lg">
+            <a href="/contact">Schedule a Consultation</a>
+          </Button>
         </div>
       </section>
     </main>

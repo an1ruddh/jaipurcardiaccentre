@@ -1,5 +1,6 @@
 import { reviews } from '@/data/reviews'
 import { Star, MapPin } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 export const metadata = {
   title: 'Reviews - Jaipur Cardiac Centre',
@@ -145,9 +146,9 @@ export default function Reviews() {
           <p className="text-gray-700 text-lg mb-8">
             Join thousands of satisfied patients who have benefited from Dr. Raghvendra's expertise.
           </p>
-          <a href="/contact" className="btn-primary">
-            Book Your Appointment Now
-          </a>
+          <Button asChild size="lg">
+            <a href="/contact">Book Your Appointment Now</a>
+          </Button>
         </div>
       </section>
     </main>

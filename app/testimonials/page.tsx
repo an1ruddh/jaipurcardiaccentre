@@ -1,5 +1,6 @@
 import { testimonials } from '@/data/testimonials'
 import { Star } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 export const metadata = {
   title: 'Patient Testimonials - Jaipur Cardiac Centre',
@@ -83,9 +84,9 @@ export default function Testimonials() {
             Experience expert cardiac care with Dr. Raghvendra Choudhary. Book your appointment today and take the
             first step towards better heart health.
           </p>
-          <a href="/contact" className="btn-primary">
-            Schedule Your Appointment
-          </a>
+          <Button asChild size="lg">
+            <a href="/contact">Schedule Your Appointment</a>
+          </Button>
         </div>
       </section>
     </main>

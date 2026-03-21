@@ -2,6 +2,11 @@
 
 import { useState } from 'react'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Label } from '@/components/ui/label'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -146,104 +151,87 @@ export default function Contact() {
                 <div className="space-y-4">
                   {/* Name */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Full Name *
-                    </label>
-                    <input
+                    <Label htmlFor="name">Full Name *</Label>
+                    <Input
                       type="text"
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
                       placeholder="Your full name"
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Email Address *
-                    </label>
-                    <input
+                    <Label htmlFor="email">Email Address *</Label>
+                    <Input
                       type="email"
                       id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
                       placeholder="your.email@example.com"
                     />
                   </div>
 
                   {/* Phone */}
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Phone Number *
-                    </label>
-                    <input
+                    <Label htmlFor="phone">Phone Number *</Label>
+                    <Input
                       type="tel"
                       id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
                       placeholder="+91 XXXXX XXXXX"
                     />
                   </div>
 
                   {/* Service */}
                   <div>
-                    <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Service Required *
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
-                    >
-                      <option value="">Select a service</option>
-                      <option value="Cardiac Consultation">Cardiac Consultation</option>
-                      <option value="ECG">ECG (Electrocardiogram)</option>
-                      <option value="Echocardiography">2D Echo (Echocardiography)</option>
-                      <option value="Angiography">Angiography</option>
-                      <option value="Angioplasty">Angioplasty</option>
-                      <option value="Pacemaker Implantation">Pacemaker Implantation</option>
-                      <option value="General Checkup">General Checkup</option>
-                      <option value="Other">Other</option>
-                    </select>
+                    <Label htmlFor="service">Service Required *</Label>
+                    <Select value={formData.service} onValueChange={(value) => setFormData(prev => ({ ...prev, service: value }))}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a service" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="Cardiac Consultation">Cardiac Consultation</SelectItem>
+                        <SelectItem value="ECG">ECG (Electrocardiogram)</SelectItem>
+                        <SelectItem value="Echocardiography">2D Echo (Echocardiography)</SelectItem>
+                        <SelectItem value="Angiography">Angiography</SelectItem>
+                        <SelectItem value="Angioplasty">Angioplasty</SelectItem>
+                        <SelectItem value="Pacemaker Implantation">Pacemaker Implantation</SelectItem>
+                        <SelectItem value="General Checkup">General Checkup</SelectItem>
+                        <SelectItem value="Other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Message/Additional Info
-                    </label>
-                    <textarea
+                    <Label htmlFor="message">Message/Additional Info</Label>
+                    <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      rows={5}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition resize-none"
                       placeholder="Tell us about your health concerns..."
-                    ></textarea>
+                    />
                   </div>
 
                   {/* Submit Button */}
-                  <button
+                  <Button
                     type="submit"
                     disabled={submitStatus === 'loading'}
-                    className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full"
+                    size="lg"
                   >
                     {submitStatus === 'loading' ? 'Sending...' : 'Book Appointment'}
-                  </button>
+                  </Button>
 
                   <p className="text-xs text-gray-600 text-center mt-4">
                     * Required fields. We'll contact you within 24 hours.
