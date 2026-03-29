@@ -1,15 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { Phone, Mail, MapPin, Clock, Send, ArrowRight } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { motion } from 'framer-motion'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -35,8 +32,6 @@ export default function Contact() {
     setSubmitStatus('loading')
 
     try {
-      // Using Formspree for email forwarding
-      // Formspree ID: xkoqawjb (setup for drraghven10@gmail.com)
       const response = await fetch('https://formspree.io/f/xkoqawjb', {
         method: 'POST',
         headers: {
@@ -67,80 +62,73 @@ export default function Contact() {
   }
 
   return (
-    <main className="overflow-x-hidden">
+    <main>
       {/* Header */}
-      <section className="relative py-24 bg-gradient-hero text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Badge variant="secondary" className="mb-6 text-lg px-4 py-2 bg-white/20 text-white border-white/30">
-              Get in Touch
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>
-            <p className="text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto">
-              Get in touch with us to schedule your appointment
-            </p>
-          </motion.div>
+      <section className="bg-white border-b border-gray-200 py-12 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Contact Us</h1>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Get in touch with us to schedule your appointment or discuss your cardiac care needs
+          </p>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-            {/* Contact Info */}
-            <div className="space-y-8">
-              <div className="bg-light p-6 rounded-lg">
+      <section className="bg-white py-16 md:py-24 lg:py-32">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+            {/* Contact Info Cards */}
+            <div className="space-y-6">
+              {/* Phone */}
+              <div className="bg-gray-50 border border-gray-200 p-8 rounded-lg">
                 <div className="flex items-start gap-4">
-                  <Phone className="text-primary flex-shrink-0 mt-1" size={24} />
+                  <Phone className="text-primary flex-shrink-0 mt-1" size={28} />
                   <div>
-                    <h3 className="font-bold text-lg text-secondary mb-2">Phone</h3>
-                    <a href="tel:+918107667788" className="text-gray-700 hover:text-primary transition-colors block">
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">Phone</h3>
+                    <a href="tel:+918107667788" className="text-primary hover:underline block text-sm mb-1">
                       +91 8107667788
                     </a>
-                    <a href="tel:+919414262690" className="text-gray-700 hover:text-primary transition-colors block">
+                    <a href="tel:+919414262690" className="text-primary hover:underline block text-sm">
                       +91 9414262690
                     </a>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-light p-6 rounded-lg">
+              {/* Email */}
+              <div className="bg-gray-50 border border-gray-200 p-8 rounded-lg">
                 <div className="flex items-start gap-4">
-                  <Mail className="text-primary flex-shrink-0 mt-1" size={24} />
+                  <Mail className="text-primary flex-shrink-0 mt-1" size={28} />
                   <div>
-                    <h3 className="font-bold text-lg text-secondary mb-2">Email</h3>
-                    <a
-                      href="mailto:drraghven10@gmail.com"
-                      className="text-gray-700 hover:text-primary transition-colors break-all"
-                    >
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">Email</h3>
+                    <a href="mailto:drraghven10@gmail.com" className="text-primary hover:underline text-sm">
                       drraghven10@gmail.com
                     </a>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-light p-6 rounded-lg">
+              {/* Address */}
+              <div className="bg-gray-50 border border-gray-200 p-8 rounded-lg">
                 <div className="flex items-start gap-4">
-                  <MapPin className="text-primary flex-shrink-0 mt-1" size={24} />
+                  <MapPin className="text-primary flex-shrink-0 mt-1" size={28} />
                   <div>
-                    <h3 className="font-bold text-lg text-secondary mb-2">Address</h3>
-                    <p className="text-gray-700">52 Janak Marg, Hanuman Nagar Extension, Jaipur, Rajasthan, 302012</p>
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">Address</h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      52 Janak Marg, Hanuman Nagar Extension, Jaipur, Rajasthan 302012
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-light p-6 rounded-lg">
+              {/* Hours */}
+              <div className="bg-gray-50 border border-gray-200 p-8 rounded-lg">
                 <div className="flex items-start gap-4">
-                  <Clock className="text-primary flex-shrink-0 mt-1" size={24} />
+                  <Clock className="text-primary flex-shrink-0 mt-1" size={28} />
                   <div>
-                    <h3 className="font-bold text-lg text-secondary mb-2">Hours</h3>
-                    <p className="text-gray-700">Monday - Saturday</p>
-                    <p className="text-gray-700">10:00 AM - 6:00 PM</p>
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">Hours</h3>
+                    <p className="text-gray-700 text-sm mb-1">Monday - Saturday</p>
+                    <p className="text-gray-700 text-sm">10:00 AM - 6:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -148,126 +136,164 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <form onSubmit={handleSubmit} className="bg-light p-8 rounded-lg shadow-md">
-                <h2 className="text-2xl font-bold text-secondary mb-6">Book an Appointment</h2>
+              <div className="bg-gray-50 border border-gray-200 p-10 rounded-lg">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Book an Appointment</h2>
 
-                {submitStatus === 'success' && (
-                  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
-                    Thank you! Your appointment request has been sent. We'll contact you soon.
-                  </div>
-                )}
-
-                {submitStatus === 'error' && (
-                  <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
-                    Error sending form. Please try again or call us directly.
-                  </div>
-                )}
-
-                <div className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name */}
                   <div>
-                    <Label htmlFor="name">Full Name *</Label>
+                    <Label htmlFor="name" className="text-gray-900 font-medium mb-2 block">
+                      Full Name
+                    </Label>
                     <Input
-                      type="text"
                       id="name"
                       name="name"
+                      type="text"
+                      placeholder="Your full name"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      placeholder="Your full name"
+                      className="border-gray-300"
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <Label htmlFor="email">Email Address *</Label>
+                    <Label htmlFor="email" className="text-gray-900 font-medium mb-2 block">
+                      Email Address
+                    </Label>
                     <Input
-                      type="email"
                       id="email"
                       name="email"
+                      type="email"
+                      placeholder="your@email.com"
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      placeholder="your.email@example.com"
+                      className="border-gray-300"
                     />
                   </div>
 
                   {/* Phone */}
                   <div>
-                    <Label htmlFor="phone">Phone Number *</Label>
+                    <Label htmlFor="phone" className="text-gray-900 font-medium mb-2 block">
+                      Phone Number
+                    </Label>
                     <Input
-                      type="tel"
                       id="phone"
                       name="phone"
+                      type="tel"
+                      placeholder="+91 XXXXX XXXXX"
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      placeholder="+91 XXXXX XXXXX"
+                      className="border-gray-300"
                     />
                   </div>
 
                   {/* Service */}
                   <div>
-                    <Label htmlFor="service">Service Required *</Label>
-                    <Select value={formData.service} onValueChange={(value) => setFormData(prev => ({ ...prev, service: value }))}>
-                      <SelectTrigger>
+                    <Label htmlFor="service" className="text-gray-900 font-medium mb-2 block">
+                      Service Interested In
+                    </Label>
+                    <Select value={formData.service} onValueChange={(value) => setFormData({ ...formData, service: value })}>
+                      <SelectTrigger className="border-gray-300">
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="Cardiac Consultation">Cardiac Consultation</SelectItem>
-                        <SelectItem value="ECG">ECG (Electrocardiogram)</SelectItem>
-                        <SelectItem value="Echocardiography">2D Echo (Echocardiography)</SelectItem>
-                        <SelectItem value="Angiography">Angiography</SelectItem>
-                        <SelectItem value="Angioplasty">Angioplasty</SelectItem>
-                        <SelectItem value="Pacemaker Implantation">Pacemaker Implantation</SelectItem>
-                        <SelectItem value="General Checkup">General Checkup</SelectItem>
-                        <SelectItem value="Other">Other</SelectItem>
+                        <SelectItem value="consultation">Cardiac Consultation</SelectItem>
+                        <SelectItem value="echo">Echocardiography</SelectItem>
+                        <SelectItem value="angioplasty">Angioplasty</SelectItem>
+                        <SelectItem value="pacemaker">Pacemaker Implantation</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   {/* Message */}
                   <div>
-                    <Label htmlFor="message">Message/Additional Info</Label>
+                    <Label htmlFor="message" className="text-gray-900 font-medium mb-2 block">
+                      Message
+                    </Label>
                     <Textarea
                       id="message"
                       name="message"
+                      placeholder="Tell us about your health concerns..."
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell us about your health concerns..."
+                      rows={5}
+                      className="border-gray-300"
                     />
                   </div>
+
+                  {/* Status Messages */}
+                  {submitStatus === 'success' && (
+                    <div className="bg-green-50 border border-green-200 text-green-800 p-4 rounded-lg text-sm">
+                      ✓ Your appointment request has been sent successfully. We'll contact you soon!
+                    </div>
+                  )}
+                  {submitStatus === 'error' && (
+                    <div className="bg-red-50 border border-red-200 text-red-800 p-4 rounded-lg text-sm">
+                      ✗ There was an error sending your request. Please try again.
+                    </div>
+                  )}
 
                   {/* Submit Button */}
                   <Button
                     type="submit"
                     disabled={submitStatus === 'loading'}
-                    className="w-full"
-                    size="lg"
+                    className="w-full bg-primary hover:bg-primary-600 text-white h-12 font-medium"
                   >
-                    {submitStatus === 'loading' ? 'Sending...' : 'Book Appointment'}
+                    {submitStatus === 'loading' ? 'Sending...' : 'Send Appointment Request'}
+                    {submitStatus !== 'loading' && <Send size={18} className="ml-2" />}
                   </Button>
+                </form>
+              </div>
+            </div>
+          </div>
 
-                  <p className="text-xs text-gray-600 text-center mt-4">
-                    * Required fields. We'll contact you within 24 hours.
-                  </p>
-                </div>
-              </form>
+          {/* Map Placeholder */}
+          <div className="bg-gray-300 rounded-lg h-96 flex items-center justify-center">
+            <div className="text-center">
+              <p className="text-gray-600 text-xl">🗺️ Google Maps Location</p>
+              <p className="text-gray-500 mt-2">Embed your Google Maps here</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-16 bg-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-8 gradient-text">Find Us on Map</h2>
-          <div className="bg-gray-300 rounded-lg h-96 flex items-center justify-center">
-            <div className="text-center">
-              <p className="text-gray-600 text-xl mb-2">📍 Google Maps</p>
-              <p className="text-gray-500">Embed your Google Maps location here</p>
-              <p className="text-gray-500 text-sm mt-4">52 Janak Marg, Hanuman Nagar Extension, Jaipur</p>
-            </div>
+      {/* Why Choose Us for Care */}
+      <section className="bg-gray-50 py-16 md:py-24 lg:py-32">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Why Contact Us?
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Get answers to your questions and expert guidance from our experienced team
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Expert Care',
+                description: '25+ years of experience in cardiac care and treatment',
+              },
+              {
+                title: 'Quick Response',
+                description: 'We respond to your inquiries within 24 hours',
+              },
+              {
+                title: 'Personalized Plan',
+                description: 'Custom treatment plans tailored to your needs',
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-white border border-gray-200 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

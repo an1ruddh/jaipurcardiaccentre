@@ -5,38 +5,38 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-secondary text-white mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+    <footer className="bg-secondary text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* About */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-white">Jaipur Cardiac Centre</h3>
-            <p className="text-white text-sm opacity-90">
-              Leading destination for advanced and reliable heart care in Jaipur. Trusted by thousands of patients.
+            <h3 className="text-lg font-bold mb-4">Jaipur Cardiac Centre</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Leading destination for advanced and reliable heart care in Jaipur. Trusted by thousands of patients with compassionate care.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-white">Quick Links</h3>
-            <ul className="space-y-2 text-white text-sm opacity-90">
+            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+            <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/services" className="hover:text-primary transition-colors">
+                <Link href="/services" className="text-gray-300 hover:text-primary transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/doctor" className="hover:text-primary transition-colors">
+                <Link href="/doctor" className="text-gray-300 hover:text-primary transition-colors">
                   About Doctor
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-primary transition-colors">
+                <Link href="/blog" className="text-gray-300 hover:text-primary transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-primary transition-colors">
+                <Link href="/contact" className="text-gray-300 hover:text-primary transition-colors">
                   Contact
                 </Link>
               </li>
@@ -45,8 +45,8 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-white">Services</h3>
-            <ul className="space-y-2 text-white text-sm opacity-90">
+            <h3 className="text-lg font-bold mb-4">Services</h3>
+            <ul className="space-y-3 text-sm text-gray-300">
               <li>Cardiac Consultation</li>
               <li>ECG & Echocardiography</li>
               <li>Angiography & Angioplasty</li>
@@ -56,31 +56,31 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-white">Contact Info</h3>
-            <div className="space-y-3 text-white text-sm opacity-90">
-              <div className="flex items-center gap-2">
-                <Phone size={16} className="text-primary" />
-                <a href="tel:+918107667788" className="hover:text-primary transition-colors">
+            <h3 className="text-lg font-bold mb-4">Contact</h3>
+            <div className="space-y-4 text-sm">
+              <div className="flex items-center gap-3">
+                <Phone size={18} className="text-primary flex-shrink-0" />
+                <a href="tel:+918107667788" className="text-gray-300 hover:text-primary transition-colors">
                   +91 8107667788
                 </a>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail size={16} className="text-primary" />
-                <a href="mailto:drraghven10@gmail.com" className="hover:text-primary transition-colors">
+              <div className="flex items-center gap-3">
+                <Mail size={18} className="text-primary flex-shrink-0" />
+                <a href="mailto:drraghven10@gmail.com" className="text-gray-300 hover:text-primary transition-colors truncate">
                   drraghven10@gmail.com
                 </a>
               </div>
-              <div className="flex items-start gap-2">
-                <MapPin size={16} className="text-primary mt-1 flex-shrink-0" />
-                <p>52 Janak Marg, Hanuman Nagar Ext., Jaipur</p>
+              <div className="flex items-start gap-3">
+                <MapPin size={18} className="text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-gray-300">52 Janak Marg, Hanuman Nagar Ext., Jaipur</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Social Links */}
-        <div className="border-t border-gray-700 pt-8 mb-8">
-          <div className="flex justify-center gap-6">
+        {/* Divider */}
+        <div className="border-t border-gray-700 py-8">
+          <div className="flex justify-center gap-8">
             <a
               href="https://www.instagram.com/dr.raghvendrachoudhary"
               target="_blank"
@@ -88,7 +88,7 @@ export default function Footer() {
               className="text-gray-300 hover:text-primary transition-colors"
               aria-label="Instagram"
             >
-              <Instagram size={24} />
+              <Instagram size={20} />
             </a>
             <a
               href="https://www.facebook.com/p/Jaipur-Cardiac-Center-61577617292425/"
@@ -97,13 +97,13 @@ export default function Footer() {
               className="text-gray-300 hover:text-primary transition-colors"
               aria-label="Facebook"
             >
-              <Facebook size={24} />
+              <Facebook size={20} />
             </a>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
+        {/* Copyright */}
+        <div className="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
           <p>&copy; {currentYear} Jaipur Cardiac Centre. All rights reserved.</p>
         </div>
       </div>

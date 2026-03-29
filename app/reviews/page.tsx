@@ -1,6 +1,7 @@
 import { reviews } from '@/data/reviews'
 import { Star, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 export const metadata = {
   title: 'Reviews - Jaipur Cardiac Centre',
@@ -11,39 +12,39 @@ export default function Reviews() {
   return (
     <main>
       {/* Header */}
-      <section className="bg-gradient-to-r from-primary to-secondary text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold">Reviews & Ratings</h1>
-          <p className="text-lg text-gray-100 mt-4">
+      <section className="bg-white border-b border-gray-200 py-12 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Reviews & Ratings</h1>
+          <p className="text-gray-600 text-lg">
             What patients say about their experience at Jaipur Cardiac Centre
           </p>
         </div>
       </section>
 
       {/* Overall Rating */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-light rounded-lg p-8 md:p-12 mb-12">
-            <h2 className="text-3xl font-bold text-center mb-8 gradient-text">Overall Rating</h2>
+      <section className="bg-white py-16 md:py-24 lg:py-32">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gray-50 rounded-lg p-12 mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Overall Rating</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-6xl font-bold text-primary mb-4">4.9</div>
-                <div className="flex justify-center gap-1 mb-4">
+                <div className="text-7xl font-bold text-primary mb-4">4.9</div>
+                <div className="flex justify-center gap-2 mb-4">
                   {Array(5)
                     .fill(0)
                     .map((_, i) => (
-                      <Star key={i} size={28} className="fill-yellow-400 text-yellow-400" />
+                      <Star key={i} size={32} className="fill-yellow-400 text-yellow-400" />
                     ))}
                 </div>
-                <p className="text-gray-600 font-semibold">Out of 5.0 Stars</p>
+                <p className="text-gray-600 font-medium">Out of 5.0 Stars</p>
               </div>
-              <div className="text-center border-l border-r">
-                <p className="text-4xl font-bold text-primary mb-2">500+</p>
-                <p className="text-gray-600 font-semibold">Total Reviews</p>
+              <div className="text-center md:border-l md:border-r md:border-gray-200">
+                <p className="text-5xl font-bold text-primary mb-2">500+</p>
+                <p className="text-gray-600 font-medium">Total Reviews</p>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-bold text-primary mb-2">98%</p>
-                <p className="text-gray-600 font-semibold">Would Recommend</p>
+                <p className="text-5xl font-bold text-primary mb-2">98%</p>
+                <p className="text-gray-600 font-medium">Would Recommend</p>
               </div>
             </div>
           </div>
@@ -51,21 +52,21 @@ export default function Reviews() {
           {/* Reviews List */}
           <div className="space-y-6">
             {reviews.map((review) => (
-              <div key={review.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="flex items-start justify-between mb-4">
+              <div key={review.id} className="bg-white border border-gray-200 p-8 rounded-lg hover:shadow-md transition-shadow">
+                <div className="flex items-start justify-between mb-4 gap-4">
                   <div>
-                    <div className="flex gap-1 mb-2">
+                    <div className="flex gap-1 mb-3">
                       {Array(review.rating)
                         .fill(0)
                         .map((_, i) => (
                           <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" />
                         ))}
                     </div>
-                    <p className="font-bold text-secondary">{review.author}</p>
+                    <p className="font-bold text-gray-900">{review.author}</p>
                   </div>
-                  <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">Verified</span>
+                  <span className="bg-primary text-white px-4 py-1 rounded-full text-xs font-semibold flex-shrink-0">Verified</span>
                 </div>
-                <p className="text-gray-700 leading-relaxed italic">"{review.text}"</p>
+                <p className="text-gray-700 leading-relaxed text-sm">"{review.text}"</p>
               </div>
             ))}
           </div>
@@ -73,45 +74,58 @@ export default function Reviews() {
       </section>
 
       {/* Google Location Info */}
-      <section className="py-16 bg-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 gradient-text">Visit Us</h2>
-          <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-            <div className="flex items-start gap-4 mb-6">
-              <MapPin className="text-primary flex-shrink-0" size={28} />
+      <section className="bg-gray-50 py-16 md:py-24 lg:py-32">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Visit Us</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Our clinic location and contact information
+            </p>
+          </div>
+          <div className="bg-white rounded-lg p-8 mb-8 shadow-sm">
+            <div className="flex items-start gap-4 mb-8">
+              <MapPin className="text-primary flex-shrink-0 mt-1" size={32} />
               <div>
-                <h3 className="text-2xl font-bold text-secondary mb-2">Jaipur Cardiac Centre</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Jaipur Cardiac Centre</h3>
                 <p className="text-gray-700 text-lg">52 Janak Marg, Hanuman Nagar Extension, Jaipur, Rajasthan, 302012</p>
               </div>
             </div>
-            <div className="space-y-3 text-gray-700">
-              <p>
-                <strong>Phone:</strong> +91 8107667788, +91 9414262690
-              </p>
-              <p>
-                <strong>Email:</strong> drraghven10@gmail.com
-              </p>
-              <p>
-                <strong>Hours:</strong> Monday - Saturday, 10:00 AM - 6:00 PM
-              </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-gray-200">
+              <div>
+                <p className="text-sm text-gray-600 font-semibold mb-2">PHONE</p>
+                <p className="text-gray-900 font-medium">+91 8107667788</p>
+                <p className="text-gray-900 font-medium">+91 9414262690</p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-600 font-semibold mb-2">EMAIL</p>
+                <p className="text-gray-900 font-medium">drraghven10@gmail.com</p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-600 font-semibold mb-2">HOURS</p>
+                <p className="text-gray-900 font-medium">Monday - Saturday</p>
+                <p className="text-gray-900 font-medium">10:00 AM - 6:00 PM</p>
+              </div>
             </div>
           </div>
 
           {/* Map Placeholder */}
-          <div className="bg-gray-300 rounded-lg h-96 flex items-center justify-center mb-8">
+          <div className="bg-gray-300 rounded-lg h-80 flex items-center justify-center mb-8">
             <div className="text-center">
-              <p className="text-gray-600 text-xl">🗺️ Google Maps Integration</p>
-              <p className="text-gray-500 mt-2">Embed your Google Maps location here</p>
+              <p className="text-gray-600 text-xl">🗺️ Google Maps Location</p>
+              <p className="text-gray-500 mt-2">Embed your Google Maps here</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-16">
+      <section className="bg-white py-16 md:py-24 lg:py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 gradient-text">Common Questions</h2>
-          <div className="space-y-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Common Questions</h2>
+            <p className="text-gray-600 text-lg">Helpful answers to questions we often receive</p>
+          </div>
+          <div className="space-y-5">
             {[
               {
                 q: 'How do I book an appointment?',
@@ -130,9 +144,9 @@ export default function Reviews() {
                 a: 'A typical consultation takes 30-45 minutes depending on your condition and the tests required.',
               },
             ].map((faq, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary">
-                <h3 className="text-lg font-bold text-secondary mb-3">{faq.q}</h3>
-                <p className="text-gray-700">{faq.a}</p>
+              <div key={idx} className="bg-gray-50 p-8 rounded-lg shadow-sm border-l-4 border-primary">
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{faq.q}</h3>
+                <p className="text-gray-700 text-sm leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -140,14 +154,16 @@ export default function Reviews() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-light">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4 gradient-text">Ready to Experience Quality Care?</h2>
-          <p className="text-gray-700 text-lg mb-8">
-            Join thousands of satisfied patients who have benefited from Dr. Raghvendra's expertise.
+      <section className="bg-gray-50 py-16 md:py-24 lg:py-32">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Ready to Experience Quality Care?
+          </h2>
+          <p className="text-gray-600 text-lg mb-10 leading-relaxed">
+            Join thousands of satisfied patients who have benefited from Dr. Raghvendra's expertise in cardiac care.
           </p>
-          <Button asChild size="lg">
-            <a href="/contact">Book Your Appointment Now</a>
+          <Button asChild className="bg-primary hover:bg-primary-600 text-white px-8 h-12">
+            <Link href="/contact">Book Your Appointment Now</Link>
           </Button>
         </div>
       </section>
