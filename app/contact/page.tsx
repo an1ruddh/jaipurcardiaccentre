@@ -64,236 +64,242 @@ export default function Contact() {
   return (
     <main>
       {/* Header */}
-      <section className="bg-white border-b border-gray-200 py-12 md:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Contact Us</h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Get in touch with us to schedule your appointment or discuss your cardiac care needs
-          </p>
+      <section className="bg-white border-b border-gray-200 py-10 md:py-14">
+        <div className="w-full max-w-full px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Contact Us</h1>
+            <p className="text-gray-600 text-base max-w-2xl mx-auto">
+              Get in touch to schedule your appointment or discuss your cardiac care needs
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="bg-white py-16 md:py-24 lg:py-32">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
-            {/* Contact Info Cards */}
-            <div className="space-y-6">
-              {/* Phone */}
-              <div className="bg-gray-50 border border-gray-200 p-8 rounded-lg">
-                <div className="flex items-start gap-4">
-                  <Phone className="text-primary flex-shrink-0 mt-1" size={28} />
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-lg mb-2">Phone</h3>
-                    <a href="tel:+918107667788" className="text-primary hover:underline block text-sm mb-1">
-                      +91 8107667788
-                    </a>
-                    <a href="tel:+919414262690" className="text-primary hover:underline block text-sm">
-                      +91 9414262690
-                    </a>
+      <section className="bg-white py-12 md:py-20 lg:py-28">
+        <div className="w-full max-w-full px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+              {/* Contact Info Cards */}
+              <div className="space-y-4">
+                {/* Phone */}
+                <div className="bg-gray-50 border border-gray-200 p-6 rounded-lg">
+                  <div className="flex items-start gap-3">
+                    <Phone className="text-primary flex-shrink-0 mt-0.5" size={20} />
+                    <div>
+                      <h3 className="font-bold text-gray-900 text-sm mb-2">Phone</h3>
+                      <a href="tel:+918107667788" className="text-primary hover:underline block text-xs">
+                        +91 8107667788
+                      </a>
+                      <a href="tel:+919414262690" className="text-primary hover:underline block text-xs">
+                        +91 9414262690
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="bg-gray-50 border border-gray-200 p-6 rounded-lg">
+                  <div className="flex items-start gap-3">
+                    <Mail className="text-primary flex-shrink-0 mt-0.5" size={20} />
+                    <div>
+                      <h3 className="font-bold text-gray-900 text-sm mb-2">Email</h3>
+                      <a href="mailto:drraghven10@gmail.com" className="text-primary hover:underline text-xs break-all">
+                        drraghven10@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Address */}
+                <div className="bg-gray-50 border border-gray-200 p-6 rounded-lg">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="text-primary flex-shrink-0 mt-0.5" size={20} />
+                    <div>
+                      <h3 className="font-bold text-gray-900 text-sm mb-2">Address</h3>
+                      <p className="text-gray-700 text-xs leading-relaxed">
+                        52 Janak Marg, Hanuman Nagar Extension, Jaipur, Rajasthan 302012
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Hours */}
+                <div className="bg-gray-50 border border-gray-200 p-6 rounded-lg">
+                  <div className="flex items-start gap-3">
+                    <Clock className="text-primary flex-shrink-0 mt-0.5" size={20} />
+                    <div>
+                      <h3 className="font-bold text-gray-900 text-sm mb-2">Hours</h3>
+                      <p className="text-gray-700 text-xs mb-1">Monday - Saturday</p>
+                      <p className="text-gray-700 text-xs">10:00 AM - 6:00 PM</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Email */}
-              <div className="bg-gray-50 border border-gray-200 p-8 rounded-lg">
-                <div className="flex items-start gap-4">
-                  <Mail className="text-primary flex-shrink-0 mt-1" size={28} />
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-lg mb-2">Email</h3>
-                    <a href="mailto:drraghven10@gmail.com" className="text-primary hover:underline text-sm">
-                      drraghven10@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </div>
+              {/* Contact Form */}
+              <div className="lg:col-span-2">
+                <div className="bg-gray-50 border border-gray-200 p-8 rounded-lg">
+                  <h2 className="text-xl font-bold text-gray-900 mb-6">Book an Appointment</h2>
 
-              {/* Address */}
-              <div className="bg-gray-50 border border-gray-200 p-8 rounded-lg">
-                <div className="flex items-start gap-4">
-                  <MapPin className="text-primary flex-shrink-0 mt-1" size={28} />
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-lg mb-2">Address</h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      52 Janak Marg, Hanuman Nagar Extension, Jaipur, Rajasthan 302012
-                    </p>
-                  </div>
-                </div>
-              </div>
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    {/* Name */}
+                    <div>
+                      <Label htmlFor="name" className="text-gray-900 font-medium mb-1.5 block text-sm">
+                        Full Name
+                      </Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        type="text"
+                        placeholder="Your full name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="border-gray-300"
+                      />
+                    </div>
 
-              {/* Hours */}
-              <div className="bg-gray-50 border border-gray-200 p-8 rounded-lg">
-                <div className="flex items-start gap-4">
-                  <Clock className="text-primary flex-shrink-0 mt-1" size={28} />
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-lg mb-2">Hours</h3>
-                    <p className="text-gray-700 text-sm mb-1">Monday - Saturday</p>
-                    <p className="text-gray-700 text-sm">10:00 AM - 6:00 PM</p>
-                  </div>
+                    {/* Email */}
+                    <div>
+                      <Label htmlFor="email" className="text-gray-900 font-medium mb-1.5 block text-sm">
+                        Email Address
+                      </Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="your@email.com"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="border-gray-300"
+                      />
+                    </div>
+
+                    {/* Phone */}
+                    <div>
+                      <Label htmlFor="phone" className="text-gray-900 font-medium mb-1.5 block text-sm">
+                        Phone Number
+                      </Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="+91 XXXXX XXXXX"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        className="border-gray-300"
+                      />
+                    </div>
+
+                    {/* Service */}
+                    <div>
+                      <Label htmlFor="service" className="text-gray-900 font-medium mb-1.5 block text-sm">
+                        Service
+                      </Label>
+                      <Select value={formData.service} onValueChange={(value) => setFormData({ ...formData, service: value })}>
+                        <SelectTrigger className="border-gray-300">
+                          <SelectValue placeholder="Select a service" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="consultation">Cardiac Consultation</SelectItem>
+                          <SelectItem value="echo">Echocardiography</SelectItem>
+                          <SelectItem value="angioplasty">Angioplasty</SelectItem>
+                          <SelectItem value="pacemaker">Pacemaker Implantation</SelectItem>
+                          <SelectItem value="other">Other</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    {/* Message */}
+                    <div>
+                      <Label htmlFor="message" className="text-gray-900 font-medium mb-1.5 block text-sm">
+                        Message
+                      </Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell us about your health concerns..."
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows={4}
+                        className="border-gray-300"
+                      />
+                    </div>
+
+                    {/* Status Messages */}
+                    {submitStatus === 'success' && (
+                      <div className="bg-green-50 border border-green-200 text-green-800 p-3 rounded-lg text-xs">
+                        ✓ Your appointment request has been sent successfully. We'll contact you soon!
+                      </div>
+                    )}
+                    {submitStatus === 'error' && (
+                      <div className="bg-red-50 border border-red-200 text-red-800 p-3 rounded-lg text-xs">
+                        ✗ There was an error sending your request. Please try again.
+                      </div>
+                    )}
+
+                    {/* Submit Button */}
+                    <Button
+                      type="submit"
+                      disabled={submitStatus === 'loading'}
+                      className="w-full bg-primary hover:bg-primary-600 text-white h-11 font-medium text-sm"
+                    >
+                      {submitStatus === 'loading' ? 'Sending...' : 'Send Request'}
+                      {submitStatus !== 'loading' && <Send size={16} className="ml-2" />}
+                    </Button>
+                  </form>
                 </div>
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <div className="bg-gray-50 border border-gray-200 p-10 rounded-lg">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Book an Appointment</h2>
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Name */}
-                  <div>
-                    <Label htmlFor="name" className="text-gray-900 font-medium mb-2 block">
-                      Full Name
-                    </Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      placeholder="Your full name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="border-gray-300"
-                    />
-                  </div>
-
-                  {/* Email */}
-                  <div>
-                    <Label htmlFor="email" className="text-gray-900 font-medium mb-2 block">
-                      Email Address
-                    </Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="your@email.com"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="border-gray-300"
-                    />
-                  </div>
-
-                  {/* Phone */}
-                  <div>
-                    <Label htmlFor="phone" className="text-gray-900 font-medium mb-2 block">
-                      Phone Number
-                    </Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="+91 XXXXX XXXXX"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="border-gray-300"
-                    />
-                  </div>
-
-                  {/* Service */}
-                  <div>
-                    <Label htmlFor="service" className="text-gray-900 font-medium mb-2 block">
-                      Service Interested In
-                    </Label>
-                    <Select value={formData.service} onValueChange={(value) => setFormData({ ...formData, service: value })}>
-                      <SelectTrigger className="border-gray-300">
-                        <SelectValue placeholder="Select a service" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="consultation">Cardiac Consultation</SelectItem>
-                        <SelectItem value="echo">Echocardiography</SelectItem>
-                        <SelectItem value="angioplasty">Angioplasty</SelectItem>
-                        <SelectItem value="pacemaker">Pacemaker Implantation</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  {/* Message */}
-                  <div>
-                    <Label htmlFor="message" className="text-gray-900 font-medium mb-2 block">
-                      Message
-                    </Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Tell us about your health concerns..."
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={5}
-                      className="border-gray-300"
-                    />
-                  </div>
-
-                  {/* Status Messages */}
-                  {submitStatus === 'success' && (
-                    <div className="bg-green-50 border border-green-200 text-green-800 p-4 rounded-lg text-sm">
-                      ✓ Your appointment request has been sent successfully. We'll contact you soon!
-                    </div>
-                  )}
-                  {submitStatus === 'error' && (
-                    <div className="bg-red-50 border border-red-200 text-red-800 p-4 rounded-lg text-sm">
-                      ✗ There was an error sending your request. Please try again.
-                    </div>
-                  )}
-
-                  {/* Submit Button */}
-                  <Button
-                    type="submit"
-                    disabled={submitStatus === 'loading'}
-                    className="w-full bg-primary hover:bg-primary-600 text-white h-12 font-medium"
-                  >
-                    {submitStatus === 'loading' ? 'Sending...' : 'Send Appointment Request'}
-                    {submitStatus !== 'loading' && <Send size={18} className="ml-2" />}
-                  </Button>
-                </form>
+            {/* Map Placeholder */}
+            <div className="bg-gray-300 rounded-lg h-64 md:h-80 flex items-center justify-center">
+              <div className="text-center">
+                <p className="text-gray-600 text-sm">🗺️ Google Maps Location</p>
+                <p className="text-gray-500 text-xs mt-1">Embed your Google Maps here</p>
               </div>
-            </div>
-          </div>
-
-          {/* Map Placeholder */}
-          <div className="bg-gray-300 rounded-lg h-96 flex items-center justify-center">
-            <div className="text-center">
-              <p className="text-gray-600 text-xl">🗺️ Google Maps Location</p>
-              <p className="text-gray-500 mt-2">Embed your Google Maps here</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Why Choose Us for Care */}
-      <section className="bg-gray-50 py-16 md:py-24 lg:py-32">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Why Contact Us?
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Get answers to your questions and expert guidance from our experienced team
-            </p>
-          </div>
+      <section className="bg-gray-50 py-12 md:py-20 lg:py-28">
+        <div className="w-full max-w-full px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                Why Contact Us?
+              </h2>
+              <p className="text-gray-600 text-base max-w-2xl mx-auto">
+                Get answers and expert guidance from our experienced team
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Expert Care',
-                description: '25+ years of experience in cardiac care and treatment',
-              },
-              {
-                title: 'Quick Response',
-                description: 'We respond to your inquiries within 24 hours',
-              },
-              {
-                title: 'Personalized Plan',
-                description: 'Custom treatment plans tailored to your needs',
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="bg-white border border-gray-200 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
-              </div>
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: 'Expert Care',
+                  description: '25+ years of experience in cardiac care',
+                },
+                {
+                  title: 'Quick Response',
+                  description: 'We respond to inquiries within 24 hours',
+                },
+                {
+                  title: 'Personalized Plan',
+                  description: 'Custom treatment plans for your needs',
+                },
+              ].map((item, idx) => (
+                <div key={idx} className="bg-white border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+                  <h3 className="text-base font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-gray-600 text-xs md:text-sm leading-relaxed">{item.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
